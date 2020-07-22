@@ -7,10 +7,20 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+import Badge from './components/Badge';
+import './global.css'
 
-const element = <h1>Hello, Platzi Badges!</h1>;
 
-const container = document.getElementById('app');
+        
+const container = document.getElementById('app')
 
 // ReactDOM.render(__qué__, __dónde__);
-ReactDOM.render(element, container);
+ReactDOM.render(<Badge 
+    firstname="Julio"
+    lastname="Gragirena"
+    avatar="https://www.gravatar.com/avatar/HASH"
+    jobTitle="Platzi Student"
+    twitter="juliogragirena"
+
+     />, container);
