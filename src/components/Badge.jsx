@@ -4,8 +4,9 @@ import "./styles/Badge.css";
 import picture from "../images/FOTO.png";
 
 class Badge extends React.Component {
+  state={}
   render() {
-    const { firstname, lastname, avatar, jobTitle, twitter } = this.props;
+    const { firstName, lastName, avatarUrl, jobTitle, twitter } = this.props;
     return (
       <div className="Badge">
         <header className="Badge_header">
@@ -14,11 +15,11 @@ class Badge extends React.Component {
         <div className="Badge_section-name">
           <img
             className="Badge_avatar"
-            src={picture ? picture : avatar}
+            src={avatarUrl}
             alt="Avatar"
           />
           <h1>
-            {firstname} <br /> {lastname}
+            {firstName} <br /> {lastName}
           </h1>
         </div>
 
