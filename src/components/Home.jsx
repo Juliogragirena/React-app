@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
       <main className="main">
-        <div className="container-fluid img-container text-white">
+        <div className="container img-container text-white">
           <div className="row img-row">
             <div className="col-12 col-md-5 mt-5 d-flex align-items-center justify-content-center">
               <div className="container">

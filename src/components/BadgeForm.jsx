@@ -22,10 +22,11 @@ class BadgeForm extends React.Component {
     // console.log(this.state)
     
     return (
-      <div>
-        <h1 className="m-4">New Attendant</h1>
+      <>
+        
 
-        <form className="m-4">
+        <form className="mb-4 shadow p-3 mb-5 bg-white rounded">
+        <h1 className="m-4">New Attendant</h1>
           <div className="form-group">
             <label htmlFor="">First Name</label>
             <input
@@ -87,7 +88,7 @@ class BadgeForm extends React.Component {
             Save
           </button>
         </form>
-      </div>
+      </>
     );
   }
 }
