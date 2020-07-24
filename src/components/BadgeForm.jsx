@@ -16,16 +16,16 @@ class BadgeForm extends React.Component {
   handleClick = (e) => {
     e.preventDefault();
     console.log('the form was submit');
-    console.log(this.state)
+    
   };
   render() {
     // console.log(this.state)
     
     return (
       <div>
-        <h1>New Attendant</h1>
+        <h1 className="m-4">New Attendant</h1>
 
-        <form>
+        <form className="m-4">
           <div className="form-group">
             <label htmlFor="">First Name</label>
             <input

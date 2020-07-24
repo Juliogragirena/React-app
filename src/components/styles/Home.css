@@ -1,0 +1,24 @@
+.main {
+  background: url("../../images/stars.svg"), #1b1b25;
+  background-repeat: repeat;
+  height: 100vh;
+}
+
+.img-row {
+  height: 100%;
+}
+
+
+
+.Imagen {
+    width:500px ;
+    
+}
+
+.row-1  {
+    width: 290px;
+}
+
+.img-container {
+  height: 100%;
+}
