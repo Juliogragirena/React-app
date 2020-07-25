@@ -1,21 +1,23 @@
 import React from "react";
 import confLogo from "../images/badge-header.svg";
 import "./styles/Badge.css";
+
+import Gravatar from "./Gravatar"
 // import picture from "../images/FOTO.png";
 
 class Badge extends React.Component {
   state={}
   render() {
-    const { firstName, lastName, avatarUrl, jobTitle, twitter } = this.props;
+    const { firstName, lastName, jobTitle, twitter, email } = this.props;
     return (
       <div className="Badge">
         <header className="Badge_header">
           <img src={confLogo} alt="Logo de conferencia" />
         </header>
         <div className="Badge_section-name">
-          <img
+          <Gravatar
             className="Badge_avatar"
-            src={avatarUrl}
+            email={email}
             alt="Avatar"
           />
           <h1>

@@ -1,32 +1,32 @@
 import React from "react";
 
 class BadgeForm extends React.Component {
-    
-//     handleChange = (e) => {
-// //     console.log({
-// //       name: e.target.name,
-// //       value: e.target.value,
-// //       e,
-// //     });
-//     this.setState({
-//         [e.target.name]: e.target.value,
-//     })
-//   };
+  //     handleChange = (e) => {
+  // //     console.log({
+  // //       name: e.target.name,
+  // //       value: e.target.value,
+  // //       e,
+  // //     });
+  //     this.setState({
+  //         [e.target.name]: e.target.value,
+  //     })
+  //   };
 
   handleClick = (e) => {
     e.preventDefault();
-    console.log('the form was submit');
-    
+    // console.log("the form was submit");
   };
   render() {
     // console.log(this.state)
-    
+
     return (
       <>
-        
-
-        <form className="mb-4 shadow p-3 mb-5 bg-white rounded">
-        <h1 className="m-4">New Attendant</h1>
+        <form
+          className="mb-4 shadow p-3 mb-5 bg-white rounded"
+          onSubmit={this.props.onSubmit}
+          
+        >
+          {this.props.children}
           <div className="form-group">
             <label htmlFor="">First Name</label>
             <input
@@ -34,7 +34,7 @@ class BadgeForm extends React.Component {
               className="form-control"
               type="text"
               name="firstName"
-              value={this.props.firstName}
+              value={this.props.formValues.firstName}
             />
           </div>
           <div className="form-group">
@@ -45,8 +45,7 @@ class BadgeForm extends React.Component {
               type="text"
               name="lastName"
               placeholder="Write your first Name"
-              value={this.props.lastName}
-              
+              value={this.props.formValues.lastName}
             />
           </div>
           <div className="form-group">
@@ -56,9 +55,9 @@ class BadgeForm extends React.Component {
               className="form-control"
               type="email"
               name="email"
-              value={this.props.email}
+              value={this.props.formValues.email}
             />
-         </div>
+          </div>
           <div className="form-group">
             <label htmlFor="">Job Title</label>
             <input
@@ -66,7 +65,7 @@ class BadgeForm extends React.Component {
               className="form-control"
               type="text"
               name="jobTitle"
-              value={this.props.jobTitle}
+              value={this.props.formValues.jobTitle}
             />
           </div>
           <div className="form-group">
@@ -76,17 +75,17 @@ class BadgeForm extends React.Component {
               className="form-control"
               type="text"
               name="twitter"
-              value={this.props.twitter}
+              value={this.props.formValues.twitter}
             />
           </div>
-          
+
           <button
-            onClick={this.handleClick}
-            type="button"
-            className="btn btn-primary btn-lg"
+            onSubmit={this.props.onSubmit}
+            className="btn btn-primary "
           >
             Save
           </button>
+          {this.props.error && <div className="alert alert-danger mt-2">{this.props.error.message}</div> }
         </form>
       </>
     );

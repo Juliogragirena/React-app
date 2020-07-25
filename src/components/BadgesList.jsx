@@ -1,48 +1,35 @@
 import React from "react";
-import twitter from "../images/twitter.svg";
+
+import { Link } from "react-router-dom";
+
+import BadgesListItem from "../components/BadgesListItem";
 
 class BadgesList extends React.Component {
   render() {
+    if (this.props.Badges.length === 0) {
+      return (
+        <div>
+          <h3>No Encontramos ningun badge</h3>
+          <Link to="/badges/new" className="btn btn-primary">
+            
+            Create new Badge
+          </Link>
+        </div>
+      );
+    }
     const { Badges } = this.props;
+
+    // console.log(this.state.data);
     // console.log(Badges)
-    console.log(Badges);
+    // console.log(Badges);
     return (
       <ul className="list-unstyled">
         {Badges.map((badge) => {
           return (
-            <li key={badge.id}>
-              <div className="container bg-dark text-white m-3 border rounded">
-                <div className="row">
-                  <div className="col-3 d-flex ">
-                    <img
-                      className="aling-self-center mx-auto my-auto rounded-circle"
-                      src={badge.avatarUrl}
-                      alt="avatar"
-                    />
-                  </div>
-                  <div className="col">
-                    <p className="m-1 ">
-                      <strong>
-                        {badge.firstName} {badge.lastName}
-                      </strong>
-                    </p>
-                    <div className="container">
-                      <div className="row">
-                        <div className="col-1 d-flex aling-items-center p1">
-                          <img src={twitter} alt="twitter-icon" width="30px" />
-                        </div>
-                        <div className="col">
-                          <a href="/">
-                            <p className="m-1 text-primary">@{badge.twitter}</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <p className="m-1">{badge.jobTitle}</p>
-                  </div>
-                </div>
-              </div>
+            <li className="" key={badge.id}>
+              <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}/edit`}>
+                <BadgesListItem badge={badge} />
+              </Link>
             </li>
           );
         })}
